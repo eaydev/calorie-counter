@@ -1,7 +1,5 @@
 const mychart = document.getElementById('macroChart').getContext('2d');
 
-Chart.defaults.doughnut.cutoutPercentage = 65;
-
 var myDoughnutChart = new Chart(mychart, {
     type: 'doughnut',
     data: {
@@ -36,3 +34,29 @@ var myDoughnutChart = new Chart(mychart, {
 });
 
 console.log(myDoughnutChart);
+
+//Pasted JavaScript
+const donutChart = document.getElementById("'" + this.domPlacement + "'").getContext('2d');
+
+var myDoughnutChart = new Chart(donutChart, {
+    type: 'doughnut',
+    data: {
+    datasets: [
+      {
+        data: this.getData(),
+        backgroundColor: this.getBg(),
+        borderWidth: 0,
+        weight: 0.5
+      }
+    ],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: this.getLabels(),
+    },
+    options: {
+      legend:{
+        position:'right',
+        align: 'center'
+      }
+    }
+});
