@@ -1,6 +1,4 @@
 //Setting default styling for global charts
-Chart.defaults.doughnut.cutoutPercentage = 65;
-
 
 class DonutChart{
   constructor(dataValues, domPlacement, totalCals = undefined){
@@ -54,7 +52,6 @@ class DonutChart{
       checkerArray.push(bgVal);
       bg.push(bgChoices[bgVal])
     }
-
     //Pop out that array of background colors boi
     return bg;
   }
@@ -93,6 +90,7 @@ class DonutChart{
   }
 
   display(){
+    Chart.defaults.doughnut.cutoutPercentage = 65;
     const donutChart = document.getElementById(this.domPlacement).getContext('2d');
 
     var myDoughnutChart = new Chart(donutChart, {
@@ -125,7 +123,7 @@ let newDiagram = new DonutChart([
   {Protein: 80},
   {Fats: 30},
   {Carbohydrates: 100}
-], 'macroChart', 2800
+], 'macroChart'
 );
 
 newDiagram.display();
