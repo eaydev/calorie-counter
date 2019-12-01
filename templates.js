@@ -32,7 +32,7 @@ const calorieEntryForm =
   </form>
 </div>`;
 
-const calorieDashboard = 
+const calorieDashboard =
 `<div class="macroChart-container">
   <canvas id="macroChart">
   </canvas>
@@ -55,3 +55,11 @@ const calorieDashboard =
   </div>
 
 </div>`;
+
+let charthome =
+`
+<div class="macroChart-container">
+  <canvas id="macroChart">
+  </canvas>
+</div>
+`;

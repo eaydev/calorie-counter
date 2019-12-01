@@ -93,7 +93,7 @@ class DonutChart{
     Chart.defaults.doughnut.cutoutPercentage = 65;
     const donutChart = document.getElementById(this.domPlacement).getContext('2d');
 
-    var myDoughnutChart = new Chart(donutChart, {
+    window.calorieChart = new Chart(donutChart, {
         type: 'doughnut',
         data: {
         datasets: [
@@ -116,11 +116,15 @@ class DonutChart{
         }
     });
   }
+
+  update(){
+
+  }
 }
 
 
 let newDiagram = new DonutChart([
-  {Protein: 80},
+  {Protein: 160},
   {Fats: 30},
   {Carbohydrates: 100}
 ], 'macroChart'

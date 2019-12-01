@@ -5,21 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Calorie Counter App - An easy way to track your macronutrients</title>
+  <!-- Import font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <!-- main stylesheet -->
   <link rel="stylesheet" href="main.css">
-
   <!-- Chart js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" charset="utf-8"></script>
 </head>
 <body>
   <noscript>Must have JavaScript to use this app.</noscript>
-  <div id="App">
-    <div class="macroChart-container">
-      <canvas id="macroChart">
-      </canvas>
-    </div>
-  </div>
+  <div id="App"><!--start of app-->
 
-  <script src="DonutGraph.js" charset="utf-8"></script>
+    <div class="starter-container">
+      <h1 class="starter-heading">Welcome to <span class="blue-highlight">'A Calorie-counter'</span> by e.a.</h1>
+      <h3 class="starter-subheading">Please enter your <span class="blue-highlight">macronutrient goals</span> below:</h3>
+
+      <div class="starter-calorie-entry">
+        <h1 class="starter-calorie-entry-heading">Total Calories:</h1>
+
+        <span class="blue-highlight">
+          <h2 id="starter-calorie-entry-total">
+              2456
+          </h2>
+        </span>
+
+
+        <div id="starter-calorie-entry-form">
+            <form id="calorie-entry-form">
+              <div class="calorie-value-row">
+                <div class="calorie-value-row-input">
+                  <input type="text" name="protein">g
+                </div>
+
+                <div class="calorie-value-row-label">
+                  <label for="protein">Protein</label>
+                </div>
+              </div>
+
+              <div class="calorie-value-row">
+                <div class="calorie-value-row-input">
+                  <input type="text" name="carbohydrates">g
+                </div>
+
+                <div class="calorie-value-row-label">
+                  <label for="protein">Carbohydrates</label>
+                </div>
+              </div>
+
+              <div class="calorie-value-row">
+                <div class="calorie-value-row-input">
+                  <input type="text" name="fats">g
+                </div>
+                <div class="calorie-value-row-label">
+                  <label for="fats">Fats</label>
+                </div>
+              </div>
+            </form>
+        </div>
+      </div>
+
+      <button id="starter-save-button">
+        Let's go
+      </button>
+
+    </div>
+
+  </div><!--end of app-->
+
+
+  <!-- <script src="DonutGraph.js" charset="utf-8"></script> -->
 
 </body>
 </html>

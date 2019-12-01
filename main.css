@@ -1,27 +1,92 @@
 *{
   margin: 0;
   padding: 0;
-
+  font-family: 'Roboto', sans-serif;
 }
+
 #App{
-  background: lightgrey;
   width: 100%;
   height: 100vh;
+}
+
+
+.starter-container{
+  text-align: center;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.starter-heading{
+  margin: 10px;
+}
+.starter-subheading{
+  font-weight: 100;
+  margin: 10px;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.starter-calorie-entry{
+  text-align: left;
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  vertical-align: center;
+  padding: 50px 40px 60px 40px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
 }
 
-.macroChart-container{
-  margin-top: 50px;
+.starter-calorie-entry-heading{
+  margin-top: 10px;
+}
+#starter-calorie-entry-total{
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+#starter-save-button{
+  color: white;
+  padding: 7px 20px 7px 20px;
+  font-size: 1rem;
+  border-style: none;
+  background: #2D9CDB;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin: 30px;
+}
+
+.calorie-value-row{
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 400px;
+}
+.calorie-value-row-input input{
+  text-align: center;
+  border-style: none;
+  height: 20px;
+  width:50%;
+  margin-right: 5px;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.calorie-value-row-label{
+  font-size: 1.1rem;
+  width: 50%;
+}
+.calorie-value-row-input{
+  width: 50%;
+  text-align: center;
+}
+#calorie-entry-form{
+  padding: 10px;
 }
 
-#trial{
-  margin: 40px;
-  transform:scale(3);
+
+/* extra styles */
+.blue-highlight{
+  color: #2F80ED;
 }
