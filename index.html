@@ -17,7 +17,7 @@
   <div id="App"><!--start of app-->
 
     <div class="starter-container">
-      <h1 class="starter-heading">Welcome to <span class="blue-highlight">'A Calorie-counter'</span> by e.a.</h1>
+      <h1 class="starter-heading">Welcome to <span class="blue-highlight">'A Calorie-counter'</span> by <a style="color:purple" href="http://github.com/eaydev">eaydev</a></h1>
       <h3 class="starter-subheading">Please enter your <span class="blue-highlight">macronutrient goals</span> below:</h3>
 
       <div class="starter-calorie-entry">
@@ -25,7 +25,6 @@
 
         <span class="blue-highlight">
           <h2 id="starter-calorie-entry-total">
-              2456
           </h2>
         </span>
 
@@ -34,7 +33,7 @@
             <form id="calorie-entry-form">
               <div class="calorie-value-row">
                 <div class="calorie-value-row-input">
-                  <input type="text" name="protein">g
+                  <input type="text" name="protein" class="caloriebox">g
                 </div>
 
                 <div class="calorie-value-row-label">
@@ -44,7 +43,7 @@
 
               <div class="calorie-value-row">
                 <div class="calorie-value-row-input">
-                  <input type="text" name="carbohydrates">g
+                  <input type="text" name="carbohydrates" class="caloriebox">g
                 </div>
 
                 <div class="calorie-value-row-label">
@@ -54,7 +53,7 @@
 
               <div class="calorie-value-row">
                 <div class="calorie-value-row-input">
-                  <input type="text" name="fats">g
+                  <input type="text" name="fats" class="caloriebox">g
                 </div>
                 <div class="calorie-value-row-label">
                   <label for="fats">Fats</label>
@@ -72,8 +71,55 @@
 
   </div><!--end of app-->
 
+  <script src="App.js" charset="utf-8"></script>
+  
+  <script>
 
-  <!-- <script src="DonutGraph.js" charset="utf-8"></script> -->
+  //Input filter to only Numbers
+  document.querySelectorAll('.caloriebox').forEach(unit => {
+    unit.addEventListener('keydown', event => {
+      if(event.code.slice(0,5) !== 'Digit' && event.code !== "Backspace" && event.code.slice(0,5) !== 'Arrow'){
+        event.preventDefault();
+      }
+    })
+  })
+
+  //Adding event handler for getTotalCall
+  document.querySelectorAll('.caloriebox').forEach(unit => {
+    unit.addEventListener('keyup', event => {
+      getTotal();
+    })
+  })
+
+  //Totalling le food into cals.
+  function getTotal(){
+    let calTotal = [];
+    let kCalTotal = 0;
+
+    document.querySelectorAll('.caloriebox').forEach(unit =>{
+        let foodObj = {};
+        foodObj.name = unit.name;
+        foodObj.grams = unit.value;
+        calTotal.push(foodObj);
+      }
+    );
+
+    calTotal.forEach(macro => {
+      if(macro.name === "protein" || macro.name == "carbohydrates"){
+        kCalTotal += (macro.grams * 4);
+      } else if(macro.name === "fats") {
+        kCalTotal += (macro.grams * 9);
+      }
+
+    })
+
+  document.getElementById('starter-calorie-entry-total').innerHTML = kCalTotal;
+  }
+
+  //Initalise macro value.
+  getTotal();
+
+  </script>
 
 </body>
 </html>
