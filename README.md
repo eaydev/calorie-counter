@@ -1,4 +1,4 @@
-# Calorie Counter with E.A.
+# Calorie Counter with E.A. (W. I. P.)
 
 Calorie counter is exactly what the label says. It's an accessory app to help individuals in following/adopting the if it fits your macros (IIFYM) lifestyle. A lifestyle that aids individuals in managing caloric intake in a more sustainable way.
 
